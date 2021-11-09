@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     // Model attributes are defined here
     name: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    isAdmin: DataTypes.BOOLEAN
   }, {
     // Other model options go here
     sequelize,
