@@ -6,16 +6,12 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "test": {
-    "username": "root",
-    "password": "password",
-    "database": "forum_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "logging": false
-  },
   "production": {
-    "use_env_variable": "CLEARDB_SILVER_URL"
+    "username": "root",
+    "password": null,
+    "database": "forum_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "travis": {
     "username": "travis",
