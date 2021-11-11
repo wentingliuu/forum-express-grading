@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-    - "10"
+    - "14"
 
 services:
   - mysql
@@ -11,9 +11,10 @@ env:
 
 # 在 install 前執行的指令
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS forum_test default character set utf8mb4 collate utf8mb4_unicode_ci;'
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS forum default character set utf8mb4 collate utf8mb4_unicode_ci;'
   - npm install sequelize-cli -g
 
 # 在執行測試之前的指令
 before_script:
-  - sequelize db:migrate
+  - sequelize db:migrate 
+  - sequelize db:seed:all
