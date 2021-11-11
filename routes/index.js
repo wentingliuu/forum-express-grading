@@ -1,4 +1,4 @@
-const helpers = require('../_helper.js')
+const helpers = require('../_helpers')
 const restController = require('../controllers/restController.js')
 const adminController = require('../controllers/adminController.js')
 const userController = require('../controllers/userController.js')
