@@ -1,0 +1,32 @@
+<h1>餐廳後台</h1>
+
+<a href='/admin/restaurants'>Restaurants</a> | <a href='/admin/users'>Users</a>
+<br />
+<br />
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">#</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{role this.isAdmin}}</td>
+      <td>
+        <form action="/admin/users/{{this.id}}/toggleAdmin?_method=PUT" method="POST" style="display: inline;">
+          <button type="submit" class="btn btn-link">{{switchRole this.isAdmin}}</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

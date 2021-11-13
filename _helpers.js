@@ -1,12 +1,14 @@
-function ensureAuthenticated (req) {
-  return req.isAuthenticated()
-}
-
-function getUser (req) {
-  return req.user
-}
-
 module.exports = {
-  ensureAuthenticated,
-  getUser
+  ensureAuthenticated: (req) => {
+    return req.isAuthenticated()
+  },
+  getUser: (req) => {
+    return req.user
+  },
+  role: (isAdmin) => {
+    return (isAdmin === 1) ? 'admin' : 'user'
+  },
+  switchRole: (isAdmin) => {
+    return (isAdmin === 1) ? 'set as user' : 'set as admin'
+  }
 }
