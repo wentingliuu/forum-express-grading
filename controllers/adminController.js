@@ -1,5 +1,4 @@
 const imgur = require('imgur-node-api')
-const { useFakeServer } = require('sinon')
 const IMGUR_CLIENT_ID = process.env.IMGUR_CLIENT_ID
 
 const db = require('../models')

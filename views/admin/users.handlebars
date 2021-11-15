@@ -20,10 +20,10 @@
       <th scope="row">{{this.id}}</th>
       <td>{{this.name}}</td>
       <td>{{this.email}}</td>
-      <td>{{role this.isAdmin}}</td>
+      <td>{{#if this.isAdmin}}admin{{else}}user{{/if}}</td>
       <td>
         <form action="/admin/users/{{this.id}}/toggleAdmin?_method=PUT" method="POST" style="display: inline;">
-          <button type="submit" class="btn btn-link">{{switchRole this.isAdmin}}</button>
+          <button type="submit" class="btn btn-link">{{#if this.isAdmin}}set as user{{else}}set as admin{{/if}}</button>
         </form>
       </td>
     </tr>
