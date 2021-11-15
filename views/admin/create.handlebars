@@ -5,12 +5,12 @@
 {{/if}}
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" value="{{restaurant.name}}">
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" maxlength="50" value="{{restaurant.name}}">
   </div>
 
   <div class="form-group">
     <label for="tel">Tel</label>
-    <input type="text" class="form-control" name="tel" id="tel" placeholder="Enter tel" value="{{restaurant.tel}}">
+    <input type="tel" class="form-control" name="tel" id="tel" placeholder="Enter tel" pattern="[\+\(\)\-\d]*" value="{{restaurant.tel}}">
   </div>
 
   <div class="form-group">
