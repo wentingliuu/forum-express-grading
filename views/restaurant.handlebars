@@ -21,6 +21,16 @@
 <br />
 <br />
 
+<h4>所有評論：</h4>
+{{#each restaurant.Comments}}
+<blockquote class="blockquote mb-0">
+  <h5><a href="/users/{{this.User.id}}">{{this.User.name}}</a></h5>
+  <p>{{this.text}}</p>
+  <footer class="blockquote-footer">{{this.createdAt}}</footer>
+</blockquote>
+<hr />
+{{/each}}
+
 <form action="/comments" method="POST">
   <div class="form-group">
     <label for="text">留下評論：</label>
