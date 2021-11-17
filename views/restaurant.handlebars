@@ -23,6 +23,11 @@
 
 <h4>所有評論：</h4>
 {{#each restaurant.Comments}}
+{{#if ../user.isAdmin}}
+<form action="/comments/{{this.id}}?_method=DELETE" method="POST" style="float: right;">
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+{{/if}}
 <blockquote class="blockquote mb-0">
   <h5><a href="/users/{{this.User.id}}">{{this.User.name}}</a></h5>
   <p>{{this.text}}</p>
@@ -31,7 +36,7 @@
 <hr />
 {{/each}}
 
-<form action="/comments" method="POST">
+<form action="/comments" method="POST" class="mb-3">
   <div class="form-group">
     <label for="text">留下評論：</label>
     <textarea class="form-control" id="text" name="text" rows="3"></textarea>
