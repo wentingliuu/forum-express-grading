@@ -21,15 +21,15 @@
 <br />
 <br />
 
-<h4>所有評論：</h4>
+<h4 class="mb-4">所有評論：</h4>
 {{#each restaurant.Comments}}
-{{#if ../user.isAdmin}}
+{{#if ../loginUser.isAdmin}}
 <form action="/comments/{{this.id}}?_method=DELETE" method="POST" style="float: right;">
   <button type="submit" class="btn btn-danger">Delete</button>
 </form>
 {{/if}}
 <blockquote class="blockquote mb-0">
-  <h5><a href="/users/{{this.User.id}}">{{this.User.name}}</a></h5>
+  <h5><img src="{{this.User.image}}" class="mr-2" style="border-radius: 50%;" width="3%" alt="avatar"><a href="/users/{{this.User.id}}">{{this.User.name}}</a></h5>
   <p>{{this.text}}</p>
   <footer class="blockquote-footer">{{moment this.createdAt}}</footer>
 </blockquote>

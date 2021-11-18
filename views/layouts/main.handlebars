@@ -17,12 +17,12 @@
       <ul class="navbar-nav mr-auto">
       </ul>
       <div>
-        {{#if user.isAdmin}}
+        {{#if loginUser.isAdmin}}
         <a href="/admin" style="color: white;margin-right: 10px;">Admin 後台</a>
         {{/if}}
-        {{#if user}}
-        <span style="color: white;margin-right: 10px;">Hi, {{user.email}}</span>
-        <a href="#" style="color: white;margin-right: 10px;" onclick="return alert('網頁建構中 >_<')">Profile</a>
+        {{#if loginUser}}
+        <span style="color: white;margin-right: 10px;">Hi, {{loginUser.email}}</span>
+        <a href="/users/{{loginUser.id}}" style="color: white;margin-right: 10px;">Profile</a>
         <a href="/logout"><button class="btn btn-outline-success my-2 my-sm-0">LogOut</button></a>
         {{/if}}
       </div>
@@ -30,7 +30,7 @@
   </nav>
   <br />
   <main role="main">
-    <div class="album py-5 bg-light">
+    <div class="album py-5 bg-light" style="min-height: 100vw;">
       <div class="container">
         {{#if success_messages}}
         <div class="alert alert-success" role="alert" style="margin: 30px 0 ;">

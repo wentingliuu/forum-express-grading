@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row p-2 rounded bg-white" style="box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);">
+    <div class="col-4 text-center">
+    {{#if user.image}}
+    <img src="{{user.image}}" style="border-radius: 50%;" width="90%" alt="avatar">
+    {{else}}
+    <img src="../image/default.png" style="border-radius: 50%;" width="90%" alt="avatar">
+    {{/if}}
+    </div>
+    <div class="col-8">
+      <h1 class="mt-2">{{user.name}}</h1>
+      <h5 class="mt-2">{{user.email}}</h5>
+      {{#if userIdentify}}
+      <a class="btn btn-primary mt-2" href="/users/{{user.id}}/edit" role="button">edit</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
