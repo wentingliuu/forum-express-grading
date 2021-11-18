@@ -5,6 +5,8 @@ const helpers = require('../_helpers')
 const bcrypt = require('bcryptjs')
 const db = require('../models')
 const User = db.User
+const Comment = db.Comment
+const Restaurant = db.Restaurant
 
 const userController = {
   signUpPage: (req, res) => {
@@ -48,10 +50,18 @@ const userController = {
     res.redirect('/signin')
   },
   getUser: (req, res) => {
-    return User.findByPk(req.params.id, { raw: true })
-      .then(user => {
-        const userIdentify = (Number(req.params.id) === Number(helpers.getUser(req).id))
-        res.render('profile', { user: user, userIdentify: userIdentify })
+    return Comment.findAndCountAll({
+      raw: true,
+      nest: true,
+      where: { UserId: req.params.id },
+      include: [Restaurant]
+    })
+      .then(comments => {
+        return User.findByPk(req.params.id, { raw: true })
+          .then(user => {
+            const userIdentify = (Number(req.params.id) === Number(helpers.getUser(req).id))
+            res.render('profile', { user: user, comments: comments, userIdentify: userIdentify })
+          })
       })
   },
   editUser: (req, res) => {

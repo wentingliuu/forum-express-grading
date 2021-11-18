@@ -8,11 +8,25 @@
     {{/if}}
     </div>
     <div class="col-8">
-      <h1 class="mt-2">{{user.name}}</h1>
-      <h5 class="mt-2">{{user.email}}</h5>
+      <h1 class="mt-3">{{user.name}}</h1>
+      <h5 class="mt-3">{{user.email}}</h5>
+      <p class="mt-2"><b class="text-dark">{{comments.count}}</b> 已評論餐廳</p>
       {{#if userIdentify}}
-      <a class="btn btn-primary mt-2" href="/users/{{user.id}}/edit" role="button">edit</a>
+      <a class="btn btn-primary mt-3" href="/users/{{user.id}}/edit" role="button">edit</a>
       {{/if}}
     </div>
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="card-header">
+    <p class="m-0"><b class="text-dark">{{comments.count}}</b> 已評論餐廳</p>
+  </div>
+  <div class="card-body">
+    {{#each comments.rows}}
+    <a href="/restaurants/{{this.RestaurantId}}" style="display: inline-block;">
+      <img class="img rounded mr-1" src="{{this.Restaurant.image}}" style="width: 5vw; height:5vw">
+    </a>
+    {{/each}}
   </div>
 </div>

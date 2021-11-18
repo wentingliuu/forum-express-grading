@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('Restaurants',
       Array.from({ length: 50 }).map((d, i) =>
         ({
+          id: i * 10 + 1,
           name: faker.name.findName(),
           tel: faker.phone.phoneNumber(),
           address: faker.address.streetAddress(),
