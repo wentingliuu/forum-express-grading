@@ -61,11 +61,13 @@ const restController = {
         Category,
         { model: Comment, include: [User] }
       ]
-    }).then(restaurant => {
-      return res.render('restaurant', {
-        restaurant: restaurant.toJSON()
-      })
     })
+      .then(restaurant => restaurant.increment('viewCounts'))
+      .then(restaurant => {
+        return res.render('restaurant', {
+          restaurant: restaurant.toJSON()
+        })
+      })
   },
   getFeeds: (req, res) => {
     return Promise.all([
