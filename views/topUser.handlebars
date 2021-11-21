@@ -1,0 +1,35 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="/restaurants">首頁</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/restaurants/feeds">最新動態</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/users/top">美食達人</a>
+  </li>
+</ul>
+<br />
+
+<h1>美食達人</h1>
+<br/>
+<div class="row" style="text-align: center;">
+  {{#each users}}
+  <div class="col-3">
+    <a href="/users/{{this.id}}">
+      <img class="" src="{{this.image}}" width="140px" height="140px">
+    </a>
+    <h2>{{this.name}}</h2>
+    <span class="badge badge-secondary">追蹤人數：{{this.FollowerCount}}</span>
+    <p>
+      {{#if this.isFollowed }}
+    <form action="/following/{{this.id}}?_method=DELETE" method="POST" style="display: contents;"><button type="submit"
+        class="btn btn-danger">取消追蹤</button></form>
+    {{else}}
+    <form action="/following/{{this.id}}" method="POST" style="display: contents;"><button type="submit"
+        class="btn btn-primary">追蹤</button></form>
+    {{/if}}
+    </p>
+  </div>
+  {{/each}}
+</div>
