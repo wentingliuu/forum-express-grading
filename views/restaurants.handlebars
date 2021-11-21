@@ -33,6 +33,9 @@
         </p>
         <span class="badge badge-secondary">{{this.categoryName}}</span>
         <p class="card-text">{{this.description}}</p>
+        <form action="/favorite/{{this.id}}?_method=DELETE" method="POST"><button type="submit"
+            class="btn btn-danger">移除最愛</button></form>
+        <form action="/favorite/{{this.id}}" method="POST"><button type="submit" class="btn btn-primary">加到最愛</button></form>
       </div>
     </div>
   </div>
