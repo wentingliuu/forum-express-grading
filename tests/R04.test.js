@@ -10,8 +10,8 @@ const { createModelMock, createControllerProxy, mockRequest, mockResponse } = re
 // 建立模擬的 Like 資料
 let mockLikeData = [
   {
-    userId: 1,
-    restaurantId: 2
+    UserId: 1,
+    RestaurantId: 2
   }
 ]
 
