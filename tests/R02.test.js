@@ -3,9 +3,9 @@ const request = require('supertest')
 const sinon = require('sinon')
 const should = chai.should()
 
-const helpers = require('../_helpers');
+const helpers = require('../_helpers')
 
-const { createModelMock, createControllerProxy, mockRequest, mockResponse } = require('../helpers/unitTestHelpers');
+const { createModelMock, createControllerProxy, mockRequest, mockResponse } = require('../helpers/unitTestHelpers')
 
 describe('# R02', () => {
   describe('# R02: 建立 User Profile', function () {
