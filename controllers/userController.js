@@ -52,17 +52,25 @@ const userController = {
     res.redirect('/signin')
   },
   getUser: (req, res) => {
-    return Comment.findAndCountAll({
-      raw: true,
-      nest: true,
-      where: { UserId: req.params.id },
-      include: [Restaurant]
+    return User.findByPk(req.params.id, {
+      include: [
+        Comment,
+        { model: Restaurant, as: 'FavoritedRestaurants' },
+        { model: User, as: 'Followings' },
+        { model: User, as: 'Followers' }
+      ]
     })
-      .then(comments => {
-        return User.findByPk(req.params.id, { raw: true })
-          .then(user => {
-            const userIdentify = (Number(req.params.id) === Number(helpers.getUser(req).id))
-            res.render('profile', { user: user, comments: comments, userIdentify: userIdentify })
+      .then(user => {
+        const filteredRestId = [...new Set(user.Comments.map(comment => comment.RestaurantId))]
+        Restaurant.findAll({ raw: true, nest: true, where: { id: filteredRestId }, attributes: ['id', 'image'] })
+          .then(CommentedRest => {
+            user = {
+              ...user.toJSON(),
+              identify: (Number(req.params.id) === Number(helpers.getUser(req).id)),
+              CommentedRest: CommentedRest
+            }
+            console.log(user)
+            return res.render('profile', { user })
           })
       })
   },

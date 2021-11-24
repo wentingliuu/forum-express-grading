@@ -1,6 +1,5 @@
 const db = require('../models')
 const helpers = require('../_helpers')
-const sequelize = require('sequelize')
 
 const Restaurant = db.Restaurant
 const Category = db.Category
