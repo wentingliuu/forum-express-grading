@@ -44,6 +44,15 @@ const categoryService = {
             })
         })
     }
+  },
+  deleteCategory: (req, res, cb) => {
+    return Category.findByPk(req.params.id)
+      .then((category) => {
+        category.destroy()
+          .then((category) => {
+            cb({ status: 'success', message: '' })
+          })
+      })
   }
 }
 
