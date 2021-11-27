@@ -19,6 +19,18 @@ const categoryService = {
         cb({ categories })
       }
     })
+  },
+  postCategory: (req, res, cb) => {
+    if (!req.body.name) {
+      return cb({ status: 'error', message: "name didn't exist" })
+    } else {
+      return Category.create({
+        name: req.body.name
+      })
+        .then((category) => {
+          cb({ status: 'success', message: 'category was successfully created' })
+        })
+    }
   }
 }
 
