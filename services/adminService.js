@@ -1,9 +1,7 @@
 const imgur = require('imgur-node-api')
 const IMGUR_CLIENT_ID = process.env.IMGUR_CLIENT_ID
 
-const db = require('../models')
-const Restaurant = db.Restaurant
-const Category = db.Category
+const { Restaurant, Category, User } = require('../models')
 
 const adminService = {
   getRestaurants: (req, res, cb) => {
@@ -107,6 +105,21 @@ const adminService = {
             cb({ status: 'success', message: '' })
           })
       })
+  },
+  getUsers: async (req, res, cb) => {
+    return User.findAll({ raw: true }).then(users => {
+      cb({ users })
+    })
+  },
+  toggleAdmin: async (req, res, cb) => {
+    return User.findByPk(req.params.id).then(user => {
+      if (user.email === 'root@example.com') {
+        return cb({ status: 'error', message: '禁止變更管理者權限' })
+      }
+      user.update({ isAdmin: !user.isAdmin }).then(() => {
+        cb({ status: 'success', message: '使用者權限變更成功' })
+      })
+    })
   }
 }
 

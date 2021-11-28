@@ -1,11 +1,4 @@
-const imgur = require('imgur-node-api')
-const IMGUR_CLIENT_ID = process.env.IMGUR_CLIENT_ID
-
-const db = require('../models')
-const Restaurant = db.Restaurant
-const User = db.User
-const Category = db.Category
-
+const { Restaurant, Category } = require('../models')
 const adminService = require('../services/adminService')
 
 const adminController = {
@@ -70,20 +63,18 @@ const adminController = {
     })
   },
   getUsers: (req, res) => {
-    return User.findAll({ raw: true }).then(users => {
-      return res.render('admin/users', { users: users })
+    adminService.getUsers(req, res, (data) => {
+      return res.render('admin/users', data)
     })
   },
   toggleAdmin: (req, res) => {
-    return User.findByPk(req.params.id).then(user => {
-      if (user.email === 'root@example.com') {
-        req.flash('error_messages', '禁止變更管理者權限')
+    adminService.toggleAdmin(req, res, (data) => {
+      if (data['status'] === 'error') {
+        req.flash('error_messages', data['message'])
         return res.redirect('back')
       }
-      user.update({ isAdmin: !user.isAdmin }).then(() => {
-        req.flash('success_messages', '使用者權限變更成功')
-        return res.redirect('/admin/users')
-      })
+      req.flash('success_messages', data['message'])
+      res.redirect('/admin/users')
     })
   }
 }

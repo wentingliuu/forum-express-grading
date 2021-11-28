@@ -1,6 +1,3 @@
-const db = require('../models')
-const Category = db.Category
-
 const categoryService = require('../services/categoryService')
 
 const categoryController = {

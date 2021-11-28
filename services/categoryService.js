@@ -1,5 +1,4 @@
-const db = require('../models')
-const Category = db.Category
+const { Category } = require('../models')
 
 const categoryService = {
   getCategories: (req, res, cb) => {
