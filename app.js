@@ -3,17 +3,18 @@ const handlebars = require('express-handlebars')
 const db = require('./models')
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
+const session = require('express-session')
+
 const helpers = require('./_helpers')
+
+const app = express()
+const port = process.env.PORT || 3000
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
-const session = require('express-session')
 const passport = require('./config/passport')
-
-const app = express()
-const port = process.env.PORT || 3000
 
 app.engine('handlebars', handlebars({
   defaultLayout: 'main',
