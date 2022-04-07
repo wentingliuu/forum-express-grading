@@ -11,7 +11,6 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 | user1@example.com | 12345678 | User (access to front-stage)               |
 | root@example.com  | 12345678 | Admin (access to front-stage & back-stage) |
 <br>
-<br>
 
 ## Features
 
@@ -41,7 +40,6 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 | (Admin) READ ALL USERS         | admin could view full users list at back-stage    | `GET` /admin/users             |
 | (Admin) EDIT USER ROLE         | admin could change user's role at back-stage      | `POST` /admin/users/:id        |
 <br>
-<br>
 
 ## Screenshots
 *  **FRONT-STAGE**
@@ -51,7 +49,6 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 *  **BACK-STAGE**
 ![Back stage](https://github.com/wentingliuu/restaurant-forum-api/blob/main/image/restuarant-back-stage.gif)
 
-<br>
 <br>
 
 ## Installation and Execution
@@ -90,7 +87,6 @@ npx sequelize db:seed:all
 npm run dev
 ```
 - While the terminal returns `Express is listening on localhost:3000`, please visit http://localhost:3000 on your browser.
-<br>
 <br>
 
 ## Skills & Tools
