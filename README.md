@@ -12,6 +12,7 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 | root@example.com  | 12345678 | Admin (access to front-stage & back-stage) |
 
 ## Features
+###### Users (@front-stage)
 
 | Feature                        | Detail                                          | API ROUTE                        |
 | -------------------------------| ------------------------------------------------| -------------------------------- |
@@ -31,6 +32,10 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 | EDIT USER PROFILE              | users could edit profile & upload profile photo | `PUT` /users/:id                 |
 | FOLLOW A USER                  | users could follow others                       | `POST` /following/:userId        |
 | UNFLLOW A USER                 | users could unfollow others                     | `DELETE` /following/:userId      |
+
+###### Admins (@back-stage)
+| Feature                        | Detail                                          | API ROUTE                        |
+| -------------------------------| ------------------------------------------------| -------------------------------- |
 | (Admin) READ ALL RESTAURANTS   | admin could view full restaurants list at back-stage | `GET` /admin/restaurants    |
 | (Admin) READ A RESTAURANT      | admin could view a restaurant info at back-stage  | `GET` /admin/restaurants/:id   |
 | (Admin) CREATE A RESTAURANT    | admin could create a new restaurant at back-stage | `POST` /admin/restaurants      |
@@ -40,11 +45,10 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 | (Admin) EDIT USER ROLE         | admin could change user's role at back-stage      | `POST` /admin/users/:id        |
 
 ## Screenshots
-*  **FRONT-STAGE**
+###### FRONT-STAGE
 ![Front stage](https://github.com/wentingliuu/restaurant-forum-api/blob/main/image/restuarant-front-stage.gif)
 
-
-*  **BACK-STAGE**
+###### BACK-STAGE
 ![Back stage](https://github.com/wentingliuu/restaurant-forum-api/blob/main/image/restuarant-back-stage.gif)
 
 ## Installation and Execution
