@@ -4,13 +4,12 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 
 🌟 This project is deployed on **[HEROKU](https://floating-dusk-15723.herokuapp.com/)** as well !!!
 
-🌟 Please use the following **[dummy data]** to login, or register your own account.
+🌟 Please use the following **Dummy Data** to login, or register your own account.
 
 | Email             | Password | Role                                       |
 | ------------------| ---------| ------------------------------------------ |
 | user1@example.com | 12345678 | User (access to front-stage)               |
 | root@example.com  | 12345678 | Admin (access to front-stage & back-stage) |
-<br>
 
 ## Features
 
@@ -39,7 +38,6 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 | (Admin) DELETE A RESTAURANT    | admin could delete a restaurant at back-stage     | `DELETE` /admin/restaurants/:id|
 | (Admin) READ ALL USERS         | admin could view full users list at back-stage    | `GET` /admin/users             |
 | (Admin) EDIT USER ROLE         | admin could change user's role at back-stage      | `POST` /admin/users/:id        |
-<br>
 
 ## Screenshots
 *  **FRONT-STAGE**
@@ -48,8 +46,6 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 
 *  **BACK-STAGE**
 ![Back stage](https://github.com/wentingliuu/restaurant-forum-api/blob/main/image/restuarant-back-stage.gif)
-
-<br>
 
 ## Installation and Execution
 1.  Clone the files to your computer
@@ -87,7 +83,6 @@ npx sequelize db:seed:all
 npm run dev
 ```
 - While the terminal returns `Express is listening on localhost:3000`, please visit http://localhost:3000 on your browser.
-<br>
 
 ## Skills & Tools
 *  [Node.js](https://nodejs.org/en/) & [npm](https://www.npmjs.com/) - JavaScript runtime environment
