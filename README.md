@@ -13,31 +13,31 @@ A restaurant forum website built with [Node.js](https://nodejs.org/en/), [Expres
 
 ## Features
 
-| Feature                        | Detail                                          | API ROUT                       |
-| -------------------------------| ------------------------------------------------| ------------------------------ |
-| REGISTER                       | sign up an account with name, email, password   | POST /signup                   | 
-| LOGIN                          | sign in to browse the website                   | POST /signin                   |
-| LOGOUT                         | sign out the account                            | GET /logout                    |
-| BROWSE ALL RESTAURANTS         | users could browse all restaurants' info        | GET /restaurants               |
-| FILTER RESTAURANTS BY CATEGORY | users could filter the restaurants by category  | GET /restaurants?categoryId=id |
-| BROWSE SPECIFIC RESTAURANT     | users could browse sepcific restaurant          | GET /restaurants/:id           |
-| LEAVE COMMENTS                 | users could leave commets to restaurant         | POST /restaurants/:id          |
-| ADD TO FAVORITE                | users could add a restuarant to favorite list   | POST /favorite/:restaurantId   |
-| REMOVE FROM FAVORITE           | users could remove a restuarant to favorite list| DELETE /favorite/:restaurantId |
-| LATEST FEEDS                   | a page to show latest restaurants and comments  | GET /restaurants/feeds         |
-| TOP 10 RESTAURANTS             | a page to show top 10 favorited restaurants     | GET /restaurants/top           |
-| TOP USERS                      | a page to show users ranking by followed counts | GET /users/top                 |               
-| BROWSE SPECIFIC USER           | users could read specific user's profile        | GET /users/:id                 |
-| EDIT USER PROFILE              | users could edit profile & upload profile photo | PUT /users/:id                 |
-| FOLLOW A USER                  | users could follow others                       | POST /following/:userId        |
-| UNFLLOW A USER                 | users could unfollow others                     | DELETE /following/:userId      |
-| (Admin) READ ALL RESTAURANTS   | admin could view full restaurants list at back-stage | GET /admin/restaurants    |
-| (Admin) READ A RESTAURANT      | admin could view a restaurant info at back-stage  | GET /admin/restaurants/:id   |
-| (Admin) CREATE A RESTAURANT    | admin could create a new restaurant at back-stage | POST /admin/restaurants      |
-| (Admin) UPDATE A RESTAURANT    | admin could update a restaurant info at back-stage| PUT /admin/restaurants/:id   |
-| (Admin) DELETE A RESTAURANT    | admin could delete a restaurant at back-stage     | DELETE /admin/restaurants/:id|
-| (Admin) READ ALL USERS         | admin could view full users list at back-stage    | GET /admin/users             |
-| (Admin) EDIT USER ROLE         | admin could change user's role at back-stage      | POST /admin/users/:id        |
+| Feature                        | Detail                                          | API ROUTE                        |
+| -------------------------------| ------------------------------------------------| -------------------------------- |
+| REGISTER                       | sign up an account with name, email, password   | `POST` /signup                   | 
+| LOGIN                          | sign in to browse the website                   | `POST` /signin                   |
+| LOGOUT                         | sign out the account                            | -                                |
+| BROWSE ALL RESTAURANTS         | users could browse all restaurants' info        | `GET` /restaurants               |
+| FILTER RESTAURANTS BY CATEGORY | users could filter the restaurants by category  | `GET` /restaurants?categoryId=id |
+| BROWSE SPECIFIC RESTAURANT     | users could browse sepcific restaurant          | `GET` /restaurants/:id           |
+| LEAVE COMMENTS                 | users could leave commets to restaurant         | `POST` /restaurants/:id          |
+| ADD TO FAVORITE                | users could add a restuarant to favorite list   | `POST` /favorite/:restaurantId   |
+| REMOVE FROM FAVORITE           | users could remove a restuarant to favorite list| `DELETE` /favorite/:restaurantId |
+| LATEST FEEDS                   | a page to show latest restaurants and comments  | `GET` /restaurants/feeds         |
+| TOP 10 RESTAURANTS             | a page to show top 10 favorited restaurants     | `GET` /restaurants/top           |
+| TOP USERS                      | a page to show users ranking by followed counts | `GET` /users/top                 |               
+| BROWSE SPECIFIC USER           | users could read specific user's profile        | `GET` /users/:id                 |
+| EDIT USER PROFILE              | users could edit profile & upload profile photo | `PUT` /users/:id                 |
+| FOLLOW A USER                  | users could follow others                       | `POST` /following/:userId        |
+| UNFLLOW A USER                 | users could unfollow others                     | `DELETE` /following/:userId      |
+| (Admin) READ ALL RESTAURANTS   | admin could view full restaurants list at back-stage | `GET` /admin/restaurants    |
+| (Admin) READ A RESTAURANT      | admin could view a restaurant info at back-stage  | `GET` /admin/restaurants/:id   |
+| (Admin) CREATE A RESTAURANT    | admin could create a new restaurant at back-stage | `POST` /admin/restaurants      |
+| (Admin) UPDATE A RESTAURANT    | admin could update a restaurant info at back-stage| `PUT` /admin/restaurants/:id   |
+| (Admin) DELETE A RESTAURANT    | admin could delete a restaurant at back-stage     | `DELETE` /admin/restaurants/:id|
+| (Admin) READ ALL USERS         | admin could view full users list at back-stage    | `GET` /admin/users             |
+| (Admin) EDIT USER ROLE         | admin could change user's role at back-stage      | `POST` /admin/users/:id        |
 
 
 ## Installation and Execution
